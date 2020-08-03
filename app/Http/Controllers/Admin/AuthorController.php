@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Author;
 
 class AuthorController extends Controller
 {
@@ -14,7 +15,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        return view('admin.template.author.index');
+        return view('admin.author.index');
     }
 
     /**
@@ -24,7 +25,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.author.create');
     }
 
     /**
@@ -35,7 +36,9 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Author::create($request->only('name'));
+
+        return redirect()->route('admin.author.index');
     }
 
     /**
