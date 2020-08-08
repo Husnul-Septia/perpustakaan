@@ -18,7 +18,7 @@
             </a>
           </li>         
            <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{route('admin.book.index')}}" class="nav-link">
               <i class="fa fa-book"></i>
               <p class="text">Buku</p>
             </a>

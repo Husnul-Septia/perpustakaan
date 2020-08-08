@@ -4,8 +4,8 @@
 	<div class="card">
 		
 		<div class="card-header">
-           <h3 class="card-title">Data Penulis</h3>
-           <a href="./author/create" class="btn btn-success">Tambah Penulis</a>
+           <h3 class="card-title">Data Buku</h3>
+           <a href="./author/create" class="btn btn-success">Tambah Buku</a>
          </div>
         
         <div class="card-body">
@@ -13,8 +13,11 @@
 			<thead>
                   <tr>
                     <th>Kode</th>
-                    <th>Nama</th>
-                    <th>Action</th>
+                    <th>Judul</th>
+                    <th>Deskripsi</th>
+                    <th>Author</th>
+                    <th>Cover</th>
+                    <th>Aksi</th>
                   </tr>
                   </thead>                 
 		</table>
@@ -36,10 +39,13 @@
 			$('#datatables').DataTable({
 				processing:true,
 				serviceSide:true,
-				ajax:'{{route('admin.author.data')}}',
+				ajax:'{{route('admin.book.data')}}',
 				columns:[
 					{data: 'DT_RowIndex',orderable: false, searchable: false},
-					{data: 'name'},
+					{data: 'title'},
+					{data: 'description'},
+					{data: 'author'},
+					{data: 'cover'},
 					{data: 'action'}
 				]
 			});
