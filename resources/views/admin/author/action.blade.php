@@ -1,6 +1,8 @@
 <a href="{{route('admin.author.edit', $model)}}" class="btn btn-warning" id="edit">Edit</a>
 <button href="{{route('admin.author.destroy', $model)}}" class="btn btn-danger" id="delete">Hapus</button>
 
+
+<!-- dari sweet alert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script type="text/javascript">
 	$('button#delete').on('click', function(e){

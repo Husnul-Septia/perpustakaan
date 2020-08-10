@@ -1,0 +1,39 @@
+install folder laravel 
+1. composer create-project laravel/laravel --prefer-dist nama_project
+(ubah folder databse di config, mysql menjadi utf8 di samakan dg utf dba, krn jk tdk di rubah akan gagal)
+2. setting permission spatie (https://docs.spatie.be/laravel-permission/v2/installation-laravel/) -
+ -1. cmd : composer require spatie/laravel-permission
+ -2. php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="migrations"
+ -3. php artisan migrate (maka di db ada table baru)
+3. cmd : php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --tag="config"
+4. dan https://docs.spatie.be/laravel-permission/v3/basic-usage/middleware/
+copy pada submenu - Package Middleware( app/Http/Kernel.php ==>>
+protected $routeMiddleware = [
+    // ...
+    'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
+    'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
+    'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
+];)
+
+3.laravel debugbar -->> https://github.com/barryvdh/laravel-debugbar
+
+
+membuat tampilan (login):
+1. composer require laravel/ui
+2. php artisan ui bootstrap
+3. npm install && npm run dev
+
+1. config email -> model=user(class User extends Authenticatable implements MustVerifyEmail)
+
+datatables:
+1. composer require yajra/laravel-datatables-oracle:"~9.0"(https://github.com/yajra/laravel-datatables)
+http://yajrabox.com/
+
+alert :
+https://sweetalert2.github.io/
+
+layout:
+https://materializecss.com/
+
+melihat vendor publish laravel :
+php artisan vendor:publish

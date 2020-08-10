@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+// Route::get('/', function () {
+    // return view('auth.login');
+    // return view('frontend.book.');
+// });
+
+Route::get('/', 'Frontend\\BookController@index');
 	
 
 Auth::routes(['verify'=>true]);

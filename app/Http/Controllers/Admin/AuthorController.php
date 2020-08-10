@@ -70,6 +70,8 @@ class AuthorController extends Controller
     public function edit(Author $author)
     {
 
+        Author::create($request->only('name'));
+        
        return view('admin.author.edit',[
             'title' =>'Edit Penulis',
             'author'=>$author,

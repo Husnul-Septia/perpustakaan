@@ -22,14 +22,13 @@
 	</div>
 
 	<form action="" method="POST" id="deleteForm">
-	@csrf
-	@method("DELETE")
-	<input type="submit" name="Hapus" style="display: none">
-</form>
+		@csrf
+		@method("DELETE")
+		<input type="submit" name="Hapus" style="display: none">
+	</form>
 @endsection
 	
-@push('scripts')
-	
+@push('scripts')	
 	@include('admin.author.alert')
 	<script type="text/javascript">
 		$(function(){
