@@ -9,7 +9,7 @@ class Author extends Model
 	protected $guarded=[];
     public $timestamps=false;
 
-    public function author(){
+    public function books(){
     	return $this->hasMany(Book::class);
     }
 }

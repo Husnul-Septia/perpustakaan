@@ -3,5 +3,5 @@
 
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<title>Home Page</title>
+	<title>{{ $title ?? 'Perpusku' }}</title>
 </head>

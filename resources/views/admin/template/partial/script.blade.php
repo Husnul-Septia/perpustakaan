@@ -53,3 +53,18 @@
 <script type="text/javascript" src="{{asset('assets/plugins/notif.min.js')}}"></script>
 
 @stack('scripts')
+
+ <script type="text/javascript">
+
+ @if (session('success'))
+		
+		$.notify({
+	
+	message: '{{ session('success') }}' 
+		},{
+	// settings
+	type: 'success'
+	});		
+@endif
+
+</script>

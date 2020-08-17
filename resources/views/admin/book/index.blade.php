@@ -15,6 +15,7 @@
                     <th>Kode</th>
                     <th>Judul</th>
                     <th>Deskripsi</th>
+                    <th>Qty</th>
                     <th>Author</th>
                     <th>Cover</th>
                     <th>Aksi</th>
@@ -44,6 +45,7 @@
 					{data: 'DT_RowIndex',orderable: false, searchable: false},
 					{data: 'title'},
 					{data: 'description'},
+					{data: 'qty'},
 					{data: 'author'},
 					{data: 'cover'},
 					{data: 'action'}

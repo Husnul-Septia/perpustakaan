@@ -1,7 +1,56 @@
-@extends('layouts.app')
+@extends('frontend.templates.default')
 
 @section('content')
-<div class="container">
+    <div class="container">
+        <h3>Register</h3>
+        <form action="{{ route('register') }}" class="col s12" method="POST">
+            @csrf
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">person</i>
+                    <input type="text" name="name" class="@error('name') invalid @enderror" value="{{ old('name') }}">
+                    <label>Nama</label>
+                    @error('name')
+                        <span class="helper-text" data-error="{{ $message }}"> </span>
+                    @enderror
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" name="email" class="validate @error('email') invalid @enderror" value="{{ old('email') }}">
+                    <label>Email</label>
+                    @error('email')
+                        <span class="helper-text" data-error="{{ $message }}"> </span>
+                    @enderror
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">lock</i>
+                    <input type="password" name="password" value="" class="@error('password') invalid @enderror">
+                    <label>Password</label>
+                    @error('password')
+                        <span class="helper-text" data-error="{{ $message }}"> </span>
+                    @enderror
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">lock</i>
+                    <input type="password" name="password_confirmation" class="@error('password_confirmation') invalid @enderror" value="">
+                    <label>Password Confirmation</label>
+                    @error('password_confirmation')
+                        <span class="helper-text" data-error="{{ $message }}"> </span>
+                    @enderror
+                </div>
+
+                <div class="input-field col 12 right">
+                    <input type="submit" value="Register" class="btn waves-effect waves-light red accent-1">
+                </div>
+            </div>
+        </form>        
+    </div>
+@endsection
+
+<!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -73,5 +122,4 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+</div> -->

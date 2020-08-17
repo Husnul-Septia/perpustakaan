@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $books =auth()->user()->borrow;
+        return view('home', [
+            'books'=> $books,
+            ]);
     }
 }

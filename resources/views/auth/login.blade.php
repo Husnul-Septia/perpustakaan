@@ -1,7 +1,60 @@
-@extends('layouts.app')
+@extends('frontend.templates.default')
 
 @section('content')
+
+<?php
+    date_default_timezone_set("Asia/Bangkok");
+    $jam = date('H');
+    $shift = 1;
+
+    if ($jam >=6 and $jam <=13) 
+        $shift = 1;
+    elseif ($jam > 13 and $jam <=21) 
+        $shift = 2;
+    else
+        $shift= 3;    
+?>
+
 <div class="container">
+        <h3>Login</h3>
+        <form action="{{ route('login') }}" class="col s12" method="POST">
+            @csrf
+            <div class="row">               
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">email</i>
+                    <input type="email" name="email" class="validate @error('email') invalid @enderror" value="{{ old('email') }}">
+                    <label>Email</label>
+                    @error('email')
+                        <span class="helper-text" data-error="{{ $message }}"> </span>
+                    @enderror
+                </div>
+
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">lock</i>
+                    <input type="password" name="password" value="" class="@error('password') invalid @enderror">
+                    <label>Password</label>
+                    @error('password')
+                        <span class="helper-text" data-error="{{ $message }}"> </span>
+                    @enderror
+                </div>
+
+                <div class="input-field col s12">
+                     <i class="material-icons prefix">person</i>
+                        <select>                          
+                          <option value="1" @if($shift == 1) selected @endif>Shift Pagi</option>
+                          <option value="2" @if($shift == 2 ) selected @endif>Shift Siang</option>
+                          <option value="3" @if($shift == 3) selected @endif>Shift Malam</option>
+                        </select>
+                </div>
+                <div class="input-field col 12 right">
+                    <input type="submit" value="Login" class="btn waves-effect waves-light red accent-1">
+                </div>
+            </div>
+        </form>        
+    </div>
+@endsection
+
+<!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,5 +122,4 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+</div> -->

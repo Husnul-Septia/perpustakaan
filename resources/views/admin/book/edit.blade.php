@@ -73,6 +73,7 @@
 @endsection
 
 @push('select2css')
+ <!-- bawaan bootsrap -->
     <link rel="stylesheet" href="{{asset('assets/plugins/select2/css/select2.min.css')}}">
 @endpush
 

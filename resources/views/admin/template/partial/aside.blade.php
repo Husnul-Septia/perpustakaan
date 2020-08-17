@@ -22,7 +22,27 @@
               <i class="fa fa-book"></i>
               <p class="text">Buku</p>
             </a>
-          </li>    
+          </li>   
+           <li class="nav-item">
+            <a href="{{route('admin.borrow.index')}}" class="nav-link">
+              <i class="fa fa-book"></i>
+              <p class="text">Data Buku Di Pinjam</p>
+            </a>
+          </li>   
+
+           <li class="nav-item">
+            <a href="{{route('admin.report.top_book')}}" class="nav-link">
+              <i class="fa fa-book"></i>
+              <p class="text">Laporan Buku Terlaris</p>
+            </a>
+          </li>   
+
+           <li class="nav-item">
+            <a href="{{route('admin.report.top_user')}}" class="nav-link">
+              <i class="fa fa-book"></i>
+              <p class="text">Laporan User Teraktif</p>
+            </a>
+          </li>   
            <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="fa fa-users"></i>
